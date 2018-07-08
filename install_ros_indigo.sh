@@ -4,14 +4,14 @@
 
 echo ""
 echo "[Note] Target OS version >>> Ubuntu 14.04.x"
-echo "[Note] Target ROS version >>> ROS Indigo
-echo "[Note] Catkin workspace >>> $HOME/catkin_ws
+echo "[Note] Target ROS version >>> ROS Indigo"
+echo "[Note] Catkin workspace >>> $HOME/catkin_ws"
 echo ""
 echo "PRESS [ENTER] TO CONTINUE THE INSTALLATION"
 echo "IF YOU WAN TO CANCEL, PRESS [CTRL] + [C]"
 read
 
-# È¯°æº¯¼ö ¼±¾ð
+# í™˜ê²½ë³€ìˆ˜ ì„ ì–¸
 echo "[Set the target OS, ROS version and name of catkin workspace]"
 name_os_version=${name_os_version:="trusty"}
 #16.04=xenial
@@ -19,17 +19,17 @@ name_os_version=${name_os_version:="trusty"}
 name_ros_version=${name_ros_version:="indigo"}
 name_catkin_workspace=${name_catkin_workspace:="catkin_ws"}
 
-# apt ÃÖ½ÅÈ­
+# apt ìµœì‹ í™”
 echo "[Update the package lists and upgrad them]"
 sudo apt-get update -y
 sudo apt-get upgrade -y
 
-# ½Ã°£µ¿±â
+# ì‹œê°„ë™ê¸°
 echo "[Install build enviroment, the chrony, ntpdate and set the ntpdate]"
 sudo apt-get install -y chrony ntpdate build-essential
 sudo ntpdate ntp.ubuntu.com
 
-# ROS ´Ù¿î·Îµå ÁØºñ
+# ROS ë‹¤ìš´ë¡œë“œ ì¤€ë¹„
 echo "[Add the ROS repository]"
 if [ ! -e /etc/apt/sources.list.d/ros-latest.list ]; then
   sudo sh -c "echo \"deb http://packages.ros.org/ros/ubuntu ${name_os_version} main\" > /etc/apt/sources.list.d/ros-latest.list"
